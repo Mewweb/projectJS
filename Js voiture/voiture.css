@@ -1,0 +1,50 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    width: 95vw;
+    height: 95vh;
+    border: 2px solid black;
+}
+
+#voiture {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+img {
+    width: 175px;
+    height: 70px;
+}
+
+.container>div:not(:first-child) {
+    border: 2px solid black;
+    background-color: green;
+}
+
+.park1 {
+    grid-column: 2 / span 3;
+    grid-row: 2 / span 3;
+}
+
+.park2 {
+    grid-column: 6 / span 3;
+    grid-row: 2 / span 3;
+}
+
+.park3 {
+    grid-column: 2 / span 3;
+    grid-row: 6 / span 3;
+}
+
+.park4 {
+    grid-column: 6 / span 3;
+    grid-row: 6 / span 3;
+}
+
+.panel {
+    grid-column: 1 / span 9;
+    grid-row: 10 / span 1;
+}

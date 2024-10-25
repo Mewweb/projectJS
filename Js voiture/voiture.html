@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Voiture</title>
+    <link rel="stylesheet" href="voiture.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id=voiture><img src="voiture.png" alt=voiture></div>
+        <div class=park1>park1</div>
+        <div class=park2>park2</div>
+        <div class=park3>park3</div>
+        <div class=park4>park4</div>
+        <div class=panel>
+            <button id=left onclick="moveLeft()"><img src="left.jpg" alt=left/></button>
+            <button id=top onclick="moveTop()"><img src="top.jpg" alt=top/></button>
+            <button id=bottom onclick="moveBottom()"><img src="bottom.jpg" alt=bottom/></button>
+            <button id=right onclick="moveRight()"><img src="right.jpg" alt=right/></button>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="voiture.js"></script>
+</body>
+
+</html>
