@@ -3,22 +3,43 @@ const select = document.querySelector("select")
 const button = document.querySelector("button");
 const ul = document.querySelector("ul");
 const verbsFirstGroup = {
-    "guer": "gu",
-    "ayer": "ay",
-    "oyer": {
-        3:"oy",
-        4:"oy",
-        "autre":"oi"
+    "cer": {
+        3:"ç",
+        "autre":"c"
     },
-    "uyer": "ui",
-    "eyer": "ey",
-    "eler": {
+    "ger":{
+        3:"ge",
+        "autre":"g"
+    },
+    "peler":{
+        3:"l",
+        4:"l",
+        "autre":"ll"
+    },
+    "eler":{
         3:"el",
         4:"el",
-        "autre":"ell"
+        "autre":"èl"
     },
-    "ter":"t",
-    "tter":"tt"
+    
+    "cheter":{
+        3:"chet",
+        4:"chet",
+        "autre":"chèt"
+    },
+    "eter":{
+        3:"et",
+        4:"et",
+        "autre":"ett"
+    },
+    "uyer":{
+        3:"uy",
+        4:"uy",
+        "autre":"ui"
+    },
+    "ayer":{
+        "autre":"ay"
+    }
 }
 const pronoms = {
     "je": "e",
@@ -29,10 +50,10 @@ const pronoms = {
     "ils,elles,iels":"ent"
 }
 button.addEventListener("click", function(e){
+    ul.innerHTML ="";
     e.preventDefault();
     for(const element in verbsFirstGroup){
         let replace = new RegExp(element+"$", "g");
-        console.log(element)
         if(input.value.search(replace) != -1){
             let i = 0;
             for(const pronom in pronoms){
@@ -50,4 +71,11 @@ button.addEventListener("click", function(e){
             break;
         }
     }
+    if(!ul.querySelector("li")){
+        console.log("ffj")
+        let replace = new RegExp("er$", "g");
+        for(const pronom in pronoms){
+            ul.insertAdjacentHTML("beforeend", "<li>"+pronom+" : "+input.value.replace(replace,pronoms[pronom])+"</li>");
+        }
+   }
 });
